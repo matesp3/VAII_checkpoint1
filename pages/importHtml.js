@@ -1,15 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const bookItem = document.getElementsByClassName("cardBookItem")[0];
+    let divId = "";
 
-    if (bookItem) {
-        fetch("/reusableContent/cardBookItem/bookItem.html")
-            .then((response) => response.text())
-            .then((cardItemHtml) => {
-                bookItem.innerHTML = cardItemHtml;
-            })
-            .catch((error) => {
-                console.error("Error loading the card item:", error);
-            });
+    for (let i = 1; i < 5; i++) {
+        divId = "book" + i.toString();
+        let bookItem = document.getElementById(divId);
+
+        if (bookItem) {
+            fetch("/reusableContent/cardBookItem/bookItem.html")
+                .then((response) => response.text())
+                .then((cardItemHtml) => {
+                    bookItem.innerHTML = cardItemHtml;
+                })
+                .catch((error) => {
+                    console.error("Error loading the card item:", error);
+                });
+        }
     }
 });
 

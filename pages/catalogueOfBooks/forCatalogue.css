@@ -1,1 +1,46 @@
 @import "../../variables.css";
+
+
+.gridPageLayout {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto 8vh;
+    gap: 0;
+
+    grid-template-areas:
+        "myHeader"
+        "myContent"
+        "myFooter";
+}
+
+.navigationHeader {
+    grid-area: myHeader;
+    max-height: 65px;
+}
+
+.gridContentLayout {
+    grid-area: myContent;
+    background-color: var(--myVar-greyOfBackground);
+    min-height: 20px;
+    width: 80%;
+    justify-self: center;
+}
+
+.searchInput {
+    width: 50%;
+    margin: 20px;
+}
+
+.btnsSubmitSearching {
+    background-color: #084886;
+    border-radius: 5px;
+    color: var(--myVar-creme);
+}
+
+.footer {
+    grid-area: myFooter;
+    background-color: var(--myVar-greenOfFooter) !important;
+}
